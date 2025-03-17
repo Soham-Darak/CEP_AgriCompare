@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgriCompare - Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: url('Iogin Img 1.png') no-repeat center center fixed; /* Background Image */
+            background-size: cover; /* Ensures the image covers the entire viewport */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            color: #fff;
+        }
+
+        .container {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            max-width: 400px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .container h2 {
+            margin-bottom: 20px;
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input[type="text"],
+        select {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 8px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background 0.3s;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2>AgriCompare - Login</h2>
+
+        <!-- Username Field -->
+        <div class="input-group">
+            <label for="username">Username</label>
+            <input type="text" id="username" placeholder="Enter your username">
+        </div>
+
+        <!-- Farming Type Dropdown -->
+        <div class="input-group">
+            <label for="farming-type">Type of Farming</label>
+            <select id="farming-type">
+                <option value="organic">Organic Farming</option>
+                <option value="subsistence">Subsistence Farming</option>
+                <option value="commercial">Commercial Farming</option>
+                <option value="mixed">Mixed Farming</option>
+            </select>
+        </div>
+
+        <!-- Contact Number Field -->
+        <div class="input-group">
+            <label for="contact">Contact Number</label>
+            <input type="text" id="contact" placeholder="Enter your contact number">
+        </div>
+
+        <!-- Submit Button -->
+        <button onclick="login()" href="/index.html">Login</button>
+    </div>
+
+    <script>
+        function login() {
+            const username = document.getElementById('username').value;
+            const farmingType = document.getElementById('farming-type').value;
+            const contact = document.getElementById('contact').value;
+
+            if (username && farmingType && contact) {
+                alert(`Login Successful!\nUsername: ${username}\nFarming Type: ${farmingType}\nContact: ${contact}`);
+                window.location.href = '../index.html'; // Navigate to index.html (one level up)
+            } else {
+                alert('Please fill in all fields.');
+            }
+        }
+    </script>
+
+</body>
+
+</html>
