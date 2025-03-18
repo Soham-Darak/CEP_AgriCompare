@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgriCompare - Results</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>AgriCompare - Results</h1>
+    </header>
+
+    <section class="results-section">
+        <h2 id="crop-name">Crop Details</h2>
+
+        <div class="disease-container">
+            <img src="" id="disease-image" alt="Disease Image">
+
+            <div class="disease-info" id="disease-info">
+                <!-- Disease details will appear here -->
+            </div>
+        </div>
+
+        <h3>Recommended Medicines</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Medicine Name</th>
+                    <th>Price (₹)</th>
+                    <th>Brand</th>
+                    <th>Effectiveness (%)</th>
+                </tr>
+            </thead>
+            <tbody id="medicine-table">
+                <!-- Medicine details will be populated here -->
+            </tbody>
+        </table>
+    </section>
+
+    <footer>
+        <p>© 2025 AgriCompare. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const params = new URLSearchParams(window.location.search);
+            const crop = params.get('crop');
+            const disease = params.get('disease');
+
+            const cropNameElement = document.getElementById('crop-name');
+            const diseaseInfoElement = document.getElementById('disease-info');
+            const medicineTable = document.getElementById('medicine-table');
+            const diseaseImage = document.getElementById('disease-image');
+
+            // Sample data for disease details and medicines
+            const data = {
+                wheat: {
+                    rust: {
+                        description: "Rust causes orange pustules on leaves. It spreads rapidly in humid conditions.",
+                        image: "https://example.com/rust.jpg",
+                        medicines: [
+                            { name: "FungiGuard", price: 180, brand: "Bayer", effectiveness: 90 },
+                            { name: "CropCare", price: 220, brand: "UPL", effectiveness: 85 }
+                        ]
+                    },
+                    blight: {
+                        description: "Blight causes dark spots, yellowing, and can destroy crops quickly if untreated.",
+                        image: "https://example.com/blight.jpg",
+                        medicines: [
+                            { name: "BlightStop", price: 200, brand: "Syngenta", effectiveness: 88 },
+                            { name: "ShieldMax", price: 260, brand: "Adama", effectiveness: 92 }
+                        ]
+                    }
+                }
+            };
+
+            if (data[crop] && data[crop][disease]) {
+                const details = data[crop][disease];
+                cropNameElement.innerText = `${crop.toUpperCase()} - ${disease.toUpperCase()}`;
+                diseaseInfoElement.innerHTML = `<p>${details.description}</p>`;
+                diseaseImage.src = details.image;
+
+                medicineTable.innerHTML = details.medicines.map(med =>
+                    `<tr>
+                        <td>${med.name}</td>
+                        <td>₹${med.price}</td>
+                        <td>${med.brand}</td>
+                        <td>${med.effectiveness}%</td>
+                    </tr>`
+                ).join('');
+            } else {
+                cropNameElement.innerText = "No Data Found";
+                diseaseInfoElement.innerHTML = "<p>No information available for this selection.</p>";
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,206 @@
+/* Global Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0fff0; /* Soft green background */
+    color: #333;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Header Styling */
+header {
+    background: linear-gradient(135deg, #4CAF50, #2E7D32);
+    color: #fff;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 28px;
+}
+
+nav a, .dropbtn {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    margin-left: 15px;
+    padding: 8px 12px;
+    border-radius: 20px;
+    transition: background 0.3s, transform 0.2s;
+}
+
+nav a:hover, .dropbtn:hover {
+    background-color: #66bb6a;
+    transform: scale(1.05);
+}
+
+/* Language Dropdown */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropbtn {
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.dropbtn:hover {
+    background-color: #66bb6a;
+    transform: scale(1.05);
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #ffffff;
+    border: 2px solid #4CAF50;
+    border-radius: 10px;
+    width: 120px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: #2E7D32;
+    padding: 10px 15px;
+    text-decoration: none;
+    display: block;
+    transition: background 0.3s ease;
+}
+
+.dropdown-content a:hover {
+    background-color: #e8f5e9;
+    border-left: 4px solid #4CAF50;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(120deg, #A5D6A7, #E8F5E9);
+    text-align: center;
+    padding: 80px 20px;
+}
+
+.hero h2 {
+    color: #2E7D32;
+    font-size: 32px;
+    margin-bottom: 30px;
+}
+
+/* Selection Box */
+.selection {
+    background-color: #fff;
+    border: 3px solid #4CAF50;
+    border-radius: 12px;
+    padding: 20px;
+    max-width: 450px;
+    margin: 20px auto;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.selection:hover {
+    transform: scale(1.03);
+}
+
+label {
+    font-weight: bold;
+    color: #2E7D32;
+}
+
+select, .btn-search {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #4CAF50;
+    border-radius: 6px;
+    margin: 8px 0;
+    background-color: #ffffff;
+    color: #2E7D32;
+    cursor: pointer;
+    transition: background 0.3s, border 0.3s;
+}
+
+select:hover, .btn-search:hover {
+    background-color: #e8f5e9;
+    border-color: #66bb6a;
+}
+
+.btn-search {
+    background-color: #4CAF50;
+    color: #fff;
+    font-weight: bold;
+}
+
+/* Results Section */
+.results-section {
+    background-color: #ffffff;
+    padding: 40px;
+    border: 3px solid #4CAF50;
+    border-radius: 12px;
+    margin: 20px auto;
+    max-width: 900px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+#disease-image {
+    width: 100%;
+    max-height: 300px;
+    border-radius: 10px;
+    margin-top: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.disease-info {
+    margin-top: 15px;
+    color: #2E7D32;
+    font-weight: bold;
+}
+
+/* Table Design */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #ffffff;
+    margin-top: 15px;
+}
+
+th {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 12px;
+    text-transform: uppercase;
+}
+
+td {
+    border: 1px solid #A5D6A7;
+    padding: 10px;
+    text-align: center;
+}
+
+tbody tr:hover {
+    background-color: #e8f5e9;
+}
+
+/* Footer */
+footer {
+    background-color: #2E7D32;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 30px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}

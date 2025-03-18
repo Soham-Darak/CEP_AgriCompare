@@ -3,9 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title id="title">AgriCompare</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Hello World</h1>
+    <header>
+        <h1 id="title">AgriCompare</h1>
+        <nav>
+            <a id="nav-home" href="#">Home</a>
+            <a id="nav-about" href="#">About</a>
+            <a id="nav-contact" href="#">Contact</a>
+
+            <div class="dropdown">
+                <button class="dropbtn">Language ▼</button>
+                <div class="dropdown-content">
+                    <a href="#" onclick="changeLanguage('en')">English</a>
+                    <a href="#" onclick="changeLanguage('hi')">Hindi</a>
+                    <a href="#" onclick="changeLanguage('mr')">Marathi</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h2 id="hero-text">Find the Best Solutions for Your Crops</h2>
+
+        <div class="selection">
+            <label id="label-crop" for="crop">Select Crop:</label>
+            <select id="crop">
+                <option value="wheat">Wheat</option>
+                <option value="rice">Rice</option>
+                <option value="cotton">Cotton</option>
+            </select>
+
+            <label id="label-disease" for="disease">Select Disease:</label>
+            <select id="disease">
+                <option value="rust">Rust</option>
+                <option value="blight">Blight</option>
+                <option value="mildew">Mildew</option>
+            </select>
+
+            <button id="btn-search" class="btn-search" onclick="searchResults()">Search</button>
+        </div>
+    </section>
+
+    <footer>
+        <p id="footer-text">© 2025 AgriCompare. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
