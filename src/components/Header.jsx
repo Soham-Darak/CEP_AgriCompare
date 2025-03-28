@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import Logo from '../assets/Agricompare Logo.png'; // Importing the logo
 
 const Header = () => {
   return (
@@ -6,7 +7,7 @@ const Header = () => {
       <div className="container mx-auto px-4 py-3 flex justify-between items-center">
         <Link to="/home" className="flex items-center group">
           <img 
-            src="/assets/logo.png" 
+            src={Logo} 
             alt="AgriCompare Logo" 
             className="h-10 w-10 mr-2 transition-transform group-hover:scale-110"
           />
